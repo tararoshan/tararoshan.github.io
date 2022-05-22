@@ -1,1 +1,11 @@
 resume-build
+package-lock.json
+package.json
+styles
+public
+posts
+pages
+node_modules
+lib
+components
+.next
