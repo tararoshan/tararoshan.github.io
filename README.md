@@ -1,0 +1,1 @@
+My blog is based off of the tutorial for [Learn Next.js](https://nextjs.org/learn).
