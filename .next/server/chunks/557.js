@@ -132,7 +132,7 @@ function Layout({ children , home  }) {
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
                             className: (_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_4___default().headingLg),
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                                href: "/",
+                                href: "/blog",
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: (_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_4___default().colorInherit),
                                     children: name
@@ -150,6 +150,9 @@ function Layout({ children , home  }) {
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                     href: "/blog",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                        style: {
+                            color: "orangered"
+                        },
                         children: "\u2190 Back to all blog posts"
                     })
                 })

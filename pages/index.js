@@ -16,7 +16,7 @@ export default function Home({ allPostsData }) {
         <div className={homeStyles.optionBox}>
           <Link href={`/images/resume.pdf`}>
             <a className={homeStyles.colorInherit}>
-              <img className={homeStyles.img} src="/images/oranges.png" alt="Oranges" width={550} height={550} />
+              <img className={homeStyles.img} src="/images/oranges.jpg" alt="Oranges" width={550} height={550} />
               <h2>resumé</h2>
             </a>
           </Link>
@@ -25,7 +25,7 @@ export default function Home({ allPostsData }) {
         <div className={homeStyles.optionBox}>
           <Link href={`/blog`}>
             <a className={homeStyles.colorInherit}>
-              <img className={homeStyles.img} src="/images/chickens.png" alt="Chickens" width={550} height={550} />
+              <img className={homeStyles.img} src="/images/chickens.jpg" alt="Chickens" width={550} height={550} />
               <h2>blog</h2>
             </a>
           </Link>
@@ -34,11 +34,11 @@ export default function Home({ allPostsData }) {
 
       <section className={homeStyles.appendix}>
         <p>some other websites that are important to me:</p>
-        <ul>
+        <i><ul>
           <li><a className={homeStyles.colorInherit} href="https://blog.cyrusroshan.com/">my brother's blog</a></li>
-          <li><a className={homeStyles.colorInherit} href="https://bageljr.com/">my accountability partners's blog</a></li>
+          <li><a className={homeStyles.colorInherit} href="https://bageljr.com/">my accountability partner's blog</a></li>
           <li><a className={homeStyles.colorInherit} href="https://sites.la.utexas.edu/persian_online_resources/">UT Austin's Persian/Farsi Language Resources</a></li>
-        </ul>
+        </ul></i>
       </section>
     </>
   );

@@ -32,7 +32,7 @@ export default function Blog({ allPostsData }) {
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
             <Link href={`/posts/${id}`}>
-              <a>{title}</a>
+              <a style={{color: "orangered"}}>{title}</a>
             </Link>
             <br />
             <small className={utilStyles.lightText}>
@@ -43,11 +43,11 @@ export default function Blog({ allPostsData }) {
         </ul>
       </section>
 
-      <div>
+      <div className={utilStyles.backToHome}>
         <Link href="/">
-            <a>← Back to home page</a>
-        </Link>
-    </div> 
+            <a style={{color: "orangered"}}>← Back to home page</a>
+          </Link>
+        </div>
     </Layout>
   );
 }

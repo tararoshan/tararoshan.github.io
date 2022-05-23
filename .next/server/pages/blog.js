@@ -78,6 +78,9 @@ function Blog({ allPostsData  }) {
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
                                         href: `/posts/${id}`,
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                            style: {
+                                                color: "orangered"
+                                            },
                                             children: title
                                         })
                                     }),
@@ -95,9 +98,13 @@ function Blog({ allPostsData  }) {
                 ]
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_6___default().backToHome),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
                     href: "/",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                        style: {
+                            color: "orangered"
+                        },
                         children: "\u2190 Back to home page"
                     })
                 })

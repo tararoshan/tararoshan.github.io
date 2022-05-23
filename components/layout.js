@@ -46,18 +46,20 @@ export default function Layout({ children, home }) {
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/">
+              <Link href="/blog">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
             </h2>
           </>
         )}
       </header>
+
       <main>{children}</main>
+
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/blog">
-            <a>← Back to all blog posts</a>
+            <a style={{color: "orangered"}}>← Back to all blog posts</a>
           </Link>
         </div>
       )}
