@@ -5,25 +5,16 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Tara\'s Blog';
-export const siteTitle = 'Tara\'s Blog';
+export const siteTitle = 'Tara Roshan\'s Blog';
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Posts by Tara S Roshan"
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle,
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
         {home ? (
@@ -36,7 +27,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             /> */}
-            <img src="/images/profile.jpg" alt="Profile Picture" width={144} height={144} />
+            <img src="/images/profile.jpg" style={{borderRadius: "50%"}} alt="Profile Picture" width={144} height={144} />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
@@ -51,7 +42,7 @@ export default function Layout({ children, home }) {
                   width={108}
                   alt={name}
                 /> */}
-                <img src="/images/profile.jpg" alt="Profile Picture" width={108} height={108} />
+                <img src="/images/profile.jpg" style={{borderRadius: "50%"}} alt="Profile Picture" width={108} height={108} />
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
@@ -65,7 +56,7 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
+          <Link href="/blog">
             <a>← Back to all blog posts</a>
           </Link>
         </div>

@@ -84,34 +84,16 @@ function Date({ dateString  }) {
 
 
 const name = "Tara's Blog";
-const siteTitle = "Tara's Blog";
+const siteTitle = "Tara Roshan's Blog";
 function Layout({ children , home  }) {
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_layout_module_css__WEBPACK_IMPORTED_MODULE_3___default().container),
         children: [
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "icon",
-                        href: "/favicon.ico"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: "Learn how to build a personal website using Next.js"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        property: "og:image",
-                        content: `https://og-image.vercel.app/${encodeURI(siteTitle)}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "og:title",
-                        content: siteTitle
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:card",
-                        content: "summary_large_image"
-                    })
-                ]
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                    name: "description",
+                    content: "Posts by Tara S Roshan"
+                })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("header", {
                 className: (_layout_module_css__WEBPACK_IMPORTED_MODULE_3___default().header),
@@ -119,6 +101,9 @@ function Layout({ children , home  }) {
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                             src: "/images/profile.jpg",
+                            style: {
+                                borderRadius: "50%"
+                            },
                             alt: "Profile Picture",
                             width: 144,
                             height: 144
@@ -135,6 +120,9 @@ function Layout({ children , home  }) {
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                     src: "/images/profile.jpg",
+                                    style: {
+                                        borderRadius: "50%"
+                                    },
                                     alt: "Profile Picture",
                                     width: 108,
                                     height: 108
@@ -160,7 +148,7 @@ function Layout({ children , home  }) {
             !home && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: (_layout_module_css__WEBPACK_IMPORTED_MODULE_3___default().backToHome),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                    href: "/",
+                    href: "/blog",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                         children: "\u2190 Back to all blog posts"
                     })

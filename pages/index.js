@@ -1,47 +1,45 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import homeStyles from '../styles/home.module.css';
 import Link from 'next/link';
-import Date from '../components/date';
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕷</text></svg>"></link>
+        <title>Tara Roshan's Homepage</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>"></link>
       </Head>
 
-      <section className={utilStyles.headingMd}>
-        <p>Welcome to my little corner of the web! What would you like to read about?</p>
+      <h1 className={homeStyles.headingLg}>tara sophia roshan.</h1>
+
+      <section className={homeStyles.container}>
+        <div className={homeStyles.optionBox}>
+          <Link href={`/images/resume.pdf`}>
+            <a className={homeStyles.colorInherit}>
+              <img className={homeStyles.img} src="/images/oranges.png" alt="Oranges" width={550} height={550} />
+              <h2>resumé</h2>
+            </a>
+          </Link>
+        </div>
+        
+        <div className={homeStyles.optionBox}>
+          <Link href={`/blog`}>
+            <a className={homeStyles.colorInherit}>
+              <img className={homeStyles.img} src="/images/chickens.png" alt="Chickens" width={550} height={550} />
+              <h2>blog</h2>
+            </a>
+          </Link>
+        </div>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              <Date dateString={date} />
-            </small>
-          </li>          
-          ))}
+      <section className={homeStyles.appendix}>
+        <p>some other websites that are important to me:</p>
+        <ul>
+          <li><a className={homeStyles.colorInherit} href="https://blog.cyrusroshan.com/">my brother's blog</a></li>
+          <li><a className={homeStyles.colorInherit} href="https://bageljr.com/">my accountability partners's blog</a></li>
+          <li><a className={homeStyles.colorInherit} href="https://sites.la.utexas.edu/persian_online_resources/">UT Austin's Persian/Farsi Language Resources</a></li>
         </ul>
       </section>
-    </Layout>
+    </>
   );
 }
