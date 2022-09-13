@@ -25,6 +25,10 @@ export default function Blog({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p>Welcome to my little corner of the web! What would you like to read about?</p>
       </section>
+      <Link href={`/feed.xml`}>
+      {/* TODO I need to make an RSS feed for the static website. Maybe ask Cyrus for help? */}
+        <a style={{color: "orange"}}>Subscribe via RSS feed</a>
+      </Link>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
