@@ -4,12 +4,12 @@ author: Tara Roshan # name of site's author
 url: https://tararoshan.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" for no subpath)
 description: > # description of the site (multiple lines allowed)
-  Tara Roshan's site for communicating new knowledge or noticings in computer
+  Tara Roshan's blog for communicating new knowledge or noticings in computer
   science-related groups online.
 
 permalink: /:slug.html
 
-favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
+favicon: "favicon.svg"
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
 remote_theme: riggraz/no-style-please

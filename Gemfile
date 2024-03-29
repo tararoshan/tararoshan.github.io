@@ -3,6 +3,7 @@ gem "webrick", require: false
 
 source "https://rubygems.org"
 
-gem "kramdown-parser-gfm"  # not sure if I even need this?
+gem "kramdown-parser-gfm"  # GitHub-flavored Markdown conversion
+gem 'rouge'  # syntax highlighting
 
 gemspec
