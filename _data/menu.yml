@@ -4,8 +4,8 @@
 entries:
   - title: info
     entries:
-      - title: my github
-        url: https://github.com/tararoshan
+      # - title: my github
+      #   url: https://github.com/tararoshan
       - title: about
         url: about.html
 
@@ -25,6 +25,10 @@ entries:
 
   # - title: other blogs I like
   #   entries:
+  #     - title: my social circle
+  #       entries:
+  #         - title: blog name
+  #           url: blog uniform resource locator
   #     - title: for the curious
   #       entries:
   #         - title: blog name
