@@ -11,7 +11,7 @@ Based on the paper *Experiences with Processes and Monitors in Mesa*[^1] by Lamp
 - [Message passing or shared memory?](#message-passing-or-shared-memory)
 - [Non-preemption](#non-preemption)
 - [Hoare v. Mesa Semantics](#hoare-versus-mesa-semantics)
-- [Anatomy of a Mesa monitor](#anatomy-of-a-mesa-monitor)
+- [Monitor procedures](#monitor-procedures)
 - [Issues with Mesa](#issues-with-mesa)
 - [Conclusion](#conclusion)
 - [Sources](#sources--notes)
@@ -81,41 +81,76 @@ If you answered <b>A</b> to both questions, you're a <b>Mesa</b> monitor!
 If you answered <b>B</b> to both questions, you're a <b>Hoare</b> monitor!
 </details>
 
-Hoare monitors give the lock and CPU to the *waiter* and returns them to the signaller once the waiter has finished. This requires a context switch so that the signalling process is suspended and waits for the waiter. This also means that nested `signals` are possible.
+Hoare monitors give the lock and CPU to the *waiter* and returns them to the signaller once the waiter has finished. This requires a context switch so that the signalling process is suspended. This also means that nested `signals` are possible.
 
 In comparison, Mesa monitors put the waiter on a ready list and the signaller keeps the lock and processor. Sometime later, the waiter is scheduled and given the CPU.
 
-As you might expect, Mesa monitors are more straightforward to implement:
-```
-# mesa code
+One of the biggest issues with Hoare monitors is that they allow for non-preemptive scheduling, one of the things we specifically set out to avoid [here](#non-preemption)!
+
+As you might expect, Mesa monitors are more straightforward to implement:[^5]
+```python
+class MesaMonitor:
+    def wait(self, cur_thread):
+        # Put the waiter at the end of the notify queue
+        self.monitor_lock.queue.append(cur_thread)
+        # Thread releases lock and goes to sleep
+        self.monitor_lock.sleep_and_release()
+
+    def signal(self):
+        # Move one thread into the ready state for the scheduler to wake up later
+        ready_thread = self.monitor_lock.queue.pop()
+        scheduler.append(ready_thread)
+
+    def broadcast(self):
+        # Call signal on all of the threads
+        while not self.monitor_lock.queue.isEmpty():
+            self.signal()
 ```
 
-Whereas Hoare monitors require an extra queue (or some other marker) to identify waiting *signallers* from ordinary waiting threads:
-```
-# hoare code
+Whereas Hoare monitors require an extra queue (or some other marker) to identify waiting *signallers* from ordinary waiting threads:[^6]
+```python
+class HoareMonitor:
+    def wait(self, cur_thread):
+        # Put the waiter at the end of the notify queue
+        self.monitor_lock.wait_queue.append(cur_thread)
+        # Thread releases lock and goes to sleep
+        self.monitor_lock.sleep_and_release()
+
+    def signal(self, cur_thread):
+        # Place the thread in a signal stack
+        self.monitor_lock.signal_stack.append(cur_thread)
+        # Give up lock and CPU to a waiter
+        waiter_thread = self.monitor_lock.wait_queue.pop()
+        self.monitor_lock.switch(cur_thread, waiter_thread)
+        # If there's no waiter, we return to a thread on the signal stack
 ```
 
-## [Monitor procedures](#anatomy-of-a-mesa-monitor)
+## [Monitor procedures](#monitor-procedures)
+There are three types of Mesa monitor procedures: entry, internal, and external.
 
-- entry
-- internal
-- external
+Both entry and internal procedures are called with a monitor lock, but internal procedures are only called from *within monitor code*. Internal procedures are like private monitor methods which can break up repetitive or complicated routines within entry procedures.
+
+External procedures are those which *don't require the monitor lock* but they do affect the monitor logically (some might argue that this isn't a good use of OOP principles).
+
+The paper gives an example of a storage allocator (pg 7)[^1] with the methods `allocate`, `free`, and `expand`. `expand` doesn't require a monitor lock, but it relates to the data structure regardless, so it's an external procedure. `allocate` and `free`ing blocks require monitor locks and can be called from outside the monitor, so they're entry procedures. If the storage allocator needed a function to, say, mark the blocks currently in use at different points in time and calculate the average use of each block, it would be an internal procedure (called only from within the monitor).
 
 ## [Issues with Mesa](#issues-with-mesa)
 - how to deal with starvation/priority inversion?
 - livelock (can use processor, but don't make any progress)
-- exceptions
+- exceptions: What if a process waiting in a monitor needs to time out?
 - deadlock
+- naked notify: How do we synchronize with I/O devices that do not grab monitor locks, but can notify condition variables.
 
 ## [Conclusion](#conclusion)
 Today, Hoare-style monitors are taught for program correctness and the mathematics of programming. Because they immediately give up the lock and CPU to the waiter, they give *strict guarantees for the state of the critical section*.
 
-Mesa-style monitors are used by the POSIX library for the `pthread_cond_wait()`, `pthread_cond_signal()`, and `pthread_cond_broadcast()` functions.[^6] So Mesa monitors are used in actual operating systems today.
+Mesa-style monitors are used by the POSIX library for the `pthread_cond_wait()`, `pthread_cond_signal()`, and `pthread_cond_broadcast()` functions.[^7] So Mesa monitors are used in actual operating systems today!
 
 ## [Sources & Notes](#sources--notes)
 [^1]: The paper itself, *[Experience with Processes and Monitors in Mesa](https://people.eecs.berkeley.edu/~brewer/cs262/Mesa.pdf)*
 [^2]: Wikipedia article on the [Xerox Star](https://en.wikipedia.org/wiki/Xerox_Star#Hardware)
-[^3]: MIT [Concurrency Reading](http://web.mit.edu/6.005/www/fa14/classes/17-concurrency/) for the Software Construction class
+[^3]: MIT [concurrency reading](http://web.mit.edu/6.005/www/fa14/classes/17-concurrency/) for the Software Construction class
 [^4]: Admittedly, I don't think any critical section data would be modified by the page fault handler.
-[^5]
-[^6]: Linux man page for [pthread_cond_wait(3) on die.net](https://linux.die.net/man/3/pthread_cond_wait)
+[^5]: Adapted from [Cornell notes](https://www.cs.cornell.edu/courses/cs4410/2018su/lectures/lec09-mesa-monitors.html) on Mesa-style monitors
+[^6]: UC San Diego [graphs of monitor semantics](https://cseweb.ucsd.edu/classes/sp16/cse120-a/applications/ln/lecture9.html) and Wikipedia article on [monitors](https://en.wikipedia.org/wiki/Monitor_(synchronization)#Blocking_condition_variables)
+[^7]: See section "Condition Wait Semantics" of the Linux man page for [pthread_cond_wait(3) on die.net](https://linux.die.net/man/3/pthread_cond_wait). Since the invariants aren't guaranteed as soon as the condition wait returns, this implies that the POSIX mutex is a Mesa-style monitor.
