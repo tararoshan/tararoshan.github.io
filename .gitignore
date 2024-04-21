@@ -11,3 +11,6 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Notes, etc
+NOTES.md

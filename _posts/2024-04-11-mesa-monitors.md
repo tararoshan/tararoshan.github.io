@@ -6,6 +6,12 @@ lastUpdated:
 
 Based on the paper *Experiences with Processes and Monitors in Mesa*[^1] by Lampson and Redell, published in the Communications of the ACM in 1980. Note that the "processes" in the paper are actually... *threads*!
 
+<!-- Explain why the paper is worthwhile and why the post is worth reading -->
+<!-- example of diff in theory v. implementation in computing
+getting a better understanding of system design, with a focus in synchronization/concurrency -->
+
+<!-- read the ending where they talk about queues and write that up as well -->
+
 ## Table of contents
 - [Overview](#overview)
 - [Message passing or shared memory?](#message-passing-or-shared-memory)
@@ -19,6 +25,7 @@ Based on the paper *Experiences with Processes and Monitors in Mesa*[^1] by Lamp
 ## [Overview](#overview)
 When Xerox came out with its Xerox 8010 Information System (aka Xerox Star)[^2], it built its Pilot Operating System using the Mesa programming language. Keep in mind that Mesa (and thus Pilot) was designed for a system which supported only one user, as opposed to the timesharing required by mainframes. Some of the design decisions make more sense with this perspective in mind.
 
+<!-- give TLDR of monitor -->
 Before we jump in, if you'd like a recap of our synchronization primatives, give [this post](synchronization-review.html) a look! **TODO write the post and update link** :)
 
 ## [Message passing or shared memory?](#message-passing-or-shared-memory)
