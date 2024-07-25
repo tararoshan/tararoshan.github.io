@@ -1,6 +1,6 @@
 ---
 layout: post
-category: OperatingSystems
+category: operatingSystems
 lastUpdated:
 ---
 

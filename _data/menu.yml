@@ -18,7 +18,7 @@ entries:
 
   # - title: [operating systems]
   #   post_list:
-  #     category: OperatingSystems
+  #     category: operatingSystems
   #     show_more: true
   #     show_more_text: see more OS posts
   #     show_more_url: operating-systems-archive.html

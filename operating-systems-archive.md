@@ -1,5 +1,5 @@
 ---
 layout: archive
-which_category: OperatingSystems
-title: All operating systems posts
+which_category: operatingSystems
+title: All Operating Systems posts
 ---

@@ -4,8 +4,7 @@ author: Tara Roshan # name of site's author
 url: https://tararoshan.github.io # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" for no subpath)
 description: > # description of the site (multiple lines allowed)
-  Tara Roshan's blog for communicating new knowledge or noticings in computer
-  science-related groups online.
+  Tara Roshan's blog for communicating and learning in public.
 
 permalink: /:slug.html
 
