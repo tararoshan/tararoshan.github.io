@@ -21,7 +21,7 @@ entries:
   #     category: operatingSystems
   #     show_more: true
   #     show_more_text: see more OS posts
-  #     show_more_url: operating-systems-archive.html
+  #     show_more_url: archive-OS.html
 
   # - title: other blogs I like
   #   entries:

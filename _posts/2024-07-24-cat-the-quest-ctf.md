@@ -1,7 +1,7 @@
 ---
 title: Cat the Quest CTF
 layout: post
-category: ctf
+category: cybersecurity
 lastUpdated:
 ---
 
