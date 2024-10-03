@@ -1,5 +1,4 @@
 # Tara's Personal Website
-Currently undergoing an overhaul.
 
 ## Purpose
 For communicating what I've been learning or noticing in computer

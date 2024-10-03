@@ -11,10 +11,11 @@ plans ahead for the next conference in downtown Austin!
 
 All that to say, today I attended the 2024 [Texas Conference for Women](https://www.txconferenceforwomen.org/). It was a
 wonderful experience (especially considering my employer paid for the ticket).
-Here are a couple highlights from the keynotes and breakout sessions.
+Here are a couple of highlights from the keynotes and breakout sessions.
 
-# Breakout Sessions
 ## That's a Good Question | Navigating New Work Environments
+**Breakout Session**
+
 The session started bright and early at 8:45am, while everyone was still waking
 up and a bit too quiet to ask questions. So it was a bit of a slow session. One
 of the speakers, [Debbie McClure](https://www.txconferenceforwomen.org/speakers/debbie-mcclure/), mentioned the importance of both a personal and
@@ -36,6 +37,8 @@ make the other person feel heard. This goes for *both* (or all) sides of the
 conversation.
 
 ## Essential Boundaries: The Key to Real Self-Care & Burnout Prevention
+**Breakout Session**
+
 I *really* enjoyed this session with [Dr. Pooja Lakshmin](https://www.txconferenceforwomen.org/speakers/dr-pooja-lakshmin/). Much of what I've
 written here is either direct quotes or conservative paraphrases of Dr.
 Lakshmin's talk on bounaries. Though I haven't read it yet, I'd also recommend
@@ -71,7 +74,7 @@ and plan of action yourself.
 Boundaries are the net, not the brick wall, that we use in interpersonal
 relationships. They're about taking the time to pause.
 
-Now to the talk's take-aways.
+Now to the talk's takeaways.
 
 First, say yes when people genuinely offer help. These offers are often bids for
 human connection (see the Gottman Method below).
@@ -91,7 +94,10 @@ imagine having such an icon in the same room as you? Utter shock. Anyways, she
 was hilariously witty. What stood out to me was her habits. She always begins
 writing a new book on January 8th, and she corresponded with her mother daily in
 the form of physical letters. These letters helped her write again after her
-daughter died. They're also helping her to write her memoir.
+daughter died. They're also helping her to write her memoir. Those letters
+reminded me of Jawaharlal Nehru's [*Glimpses of World History*](https://en.wikipedia.org/wiki/Glimpses_of_World_History),
+Nehru's summary of world history based on letters he penned to his daughter
+while in prison.
 
 I loved [Tabitha Brown's](https://www.txconferenceforwomen.org/speakers/tabitha-brown/) ending quote: "Have the most amazing day, but even if
 you can't have a good one, don't go messing up no one else's." Something to live
