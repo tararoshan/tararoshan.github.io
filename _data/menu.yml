@@ -4,8 +4,6 @@
 entries:
   - title: info
     entries:
-      # - title: my github
-      #   url: https://github.com/tararoshan
       - title: about
         url: about.html
 
@@ -15,13 +13,6 @@ entries:
       show_more: true
       show_more_text: see full archive
       show_more_url: archive.html
-
-  # - title: [operating systems]
-  #   post_list:
-  #     category: operatingSystems
-  #     show_more: true
-  #     show_more_text: see more OS posts
-  #     show_more_url: archive-OS.html
 
   # - title: other blogs I like
   #   entries:
