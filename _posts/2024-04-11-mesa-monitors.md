@@ -88,7 +88,7 @@ If you answered <b>A</b> to both questions, you're a <b>Mesa</b> monitor!
 If you answered <b>B</b> to both questions, you're a <b>Hoare</b> monitor!
 </details>
 
-Hoare monitors give the lock and CPU to the *waiter* and returns them to the signaller once the waiter has finished. This requires a context switch so that the signalling process is suspended. This also means that nested `signals` are possible.
+Hoare monitors give the lock and CPU to the *waiter* and return them to the signaller once the waiter has finished. This requires a context switch so that the signalling process is suspended. This also means that nested `signals` are possible.
 
 In comparison, Mesa monitors put the waiter on a ready list and the signaller keeps the lock and processor. Sometime later, the waiter is scheduled and given the CPU.
 
